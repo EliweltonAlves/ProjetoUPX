@@ -1,0 +1,261 @@
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  min-height: 100vh;
+  background: linear-gradient(103deg, rgba(36,119,69,1) 0%, rgba(155,215,193,1) 100%);
+  height: 100%;
+  padding: 2rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.content .user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.content .user span {
+  font-size: 2rem;
+  color: white;
+}
+
+
+.content .user .profile-image {
+  width: 244px;
+  height: 244px;
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.content .user .profile-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.content #schedule-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content .schedule {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255, 255,255, 0.4);
+  padding: 24px;
+  color: white;
+  width: 470px;
+  align-items: center;
+  gap: 3rem; 
+  border-radius: 8px;
+  margin-top: 2rem;
+  box-shadow: -8px 10px 20px -13px rgba(0,0,0,0.75);
+}
+
+.content .schedule.not-scheduled-yet {
+  justify-content: center;
+}
+
+.content .schedule .icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.content .schedule svg {
+  font-size: 2.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.content .schedule svg:hover {
+  transform: scale(1.2);
+}
+
+.content .schedule .icons .pretty {
+  font-size: 30px;
+}
+
+.content .schedule .icons input[type="checkbox"]+div::before {
+  border-color: transparent;
+  background-color: rgba(128, 128, 128, 0.5);
+}
+
+.content .schedule .icons input[type="checkbox"]+div label::after {
+  background-color: white !important;
+  width: 50px;
+  height: 50px;
+  margin-top: -10px;
+  left: -10px;
+}
+
+.content .schedule .info {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.content .schedule .info .name {
+  font-size: 2.5rem;
+}
+
+.content .schedule .info .time {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 1.5rem;
+}
+
+.content .schedule .info .time div {
+  display: flex;
+  justify-content: space-between;
+  font-weight: lighter;
+}
+
+#modal.disabled {
+  display: none;
+}
+
+#modal {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  background-color: rgba(0,0,0,0.4);
+  width: 100%;
+  height: 100vh;
+  top:0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#modal section {
+  width: 90%;
+  height: 50%;
+  background-color: rgba(255, 255,255, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#modal section form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 50rem;
+  gap: 1rem;
+}
+
+
+#modal section form label {
+  width: 100%;
+  color: white;
+}
+
+#modal section form input {
+  width: 100%;
+  height: 3rem;
+  outline: none;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-align: start;
+  color: grey;
+  padding: 4px;
+}
+
+#modal section form textarea {
+  width: 100%;
+  min-height: 5rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  outline: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  color: grey;
+  padding: 4px;
+}
+
+#modal section form div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 1rem;
+}
+
+#modal section form button {
+  width: 100%;
+  height: 3rem;
+  background-color: white;
+  color: green;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid green;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+#modal section form button:hover {
+  background-color: green;
+  color: white;
+} 
+
+#modal section form button#delete-button {
+  width: 100%;
+  height: 3rem;
+  background-color: white;
+  color: red;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid red;
+  transition: all 0.2s ease-in-out;
+  border-radius: 8px;
+}
+
+#modal section form button#delete-button:hover {
+  background-color: red;
+  color: white;
+} 
+
+#modal section #close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+#modal section #close-button {
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#modal section #close-button:hover {
+  transform: scale(1.2);
+}

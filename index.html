@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projeto UPX</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0.3/Gulpfile.min.js
+"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/uuid@9.0.1/dist/index.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0.3/dist/pretty-checkbox.min.css
+" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/general.css">
+</head>
+<body>
+  <aside id="modal" class="disabled">
+    <section>
+      <div id="close-button">
+        <i data-feather="x"></i>
+      </div>
+      <form id="add-schedule-form">
+        <label for="name">
+          Name:
+          <input type="text" name="name" id="name" required>
+        </label>
+        <div>
+          <label for="start">
+            Start:
+            <input type="datetime-local" name="start" id="" required>
+          </label>
+          <label for="stop">Stop:
+            <input type="datetime-local" name="stop" id=""" required>
+          </label>
+        </div>
+        <label for="description">
+          Description:
+          <textarea name="description" id="" required></textarea>
+        </label>
+        <div>
+          <button type="submit">Save</button>
+          <button id="delete-button" type="button">Delete</button>
+        </div>
+      </form>
+    </section>
+  </aside>
+
+  <section class="main">
+    <section class="content">
+      <div class="user">
+        <div class="profile-image">
+          <img src="./public/profile.jpg" alt="">
+        </div>
+        <span>Nome do usuário</span>
+      </div>
+      <div id="schedule-input">
+      </div>
+      <div class="schedule not-scheduled-yet">
+        <div class="info" id="add-schedule">
+          <i data-feather="plus"></i>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <script src="./js/index.js"></script>
+
+  <script>
+    feather.replace({
+      width: '2.2rem',
+      height: '2.2rem'
+    });
+  </script>
+</body>
+</html>
+
